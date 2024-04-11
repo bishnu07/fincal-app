@@ -1,0 +1,38 @@
+<section>
+  <div class="container">
+    <div class="payment-breakdown d-flex justify-content-center align-items-center" style="gap: 5rem;height: 100vh;">
+      <div class="bond-payment">
+        <h5>Bond Monthly Payment</h5>
+        <table>
+          <thead>
+            <tr>
+              <th *ngFor="let key of getPaymentKeys(bondMonthlyPaymentCycle[0])" style="padding-right: 10px;color: grey;">{{ key }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let payment of bondMonthlyPaymentCycle">
+              <td *ngFor="let value of getPaymentValues(payment)" style="padding-right: 10px;">{{ value }}</td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+      <div class="loan-payment">
+        <h5>Loan Monthly Payment</h5>
+        <table>
+          <thead>
+            <tr>
+              <th *ngFor="let key of getPaymentKeys(loanMonthlyPaymentCycle[0])" style="padding-right: 10px;color: grey;">{{ key }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let payment of loanMonthlyPaymentCycle">
+              <td *ngFor="let value of getPaymentValues(payment)" style="padding-right: 10px;">{{ value ? value : 0 }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+<router-outlet></router-outlet>
